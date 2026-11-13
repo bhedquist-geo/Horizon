@@ -1,0 +1,167 @@
+{
+  "ai": {
+    "provider": "gemini",
+    "model": "gemini-3.5-flash-lite",
+    "api_key_env": "GOOGLE_API_KEY",
+    "temperature": 0.3,
+    "max_tokens": 8192,
+    "throttle_sec": 1,
+    "languages": [
+      "en"
+    ],
+    "analysis_concurrency": 3,
+    "enrichment_concurrency": 2
+  },
+  "collection": {
+    "time_window_hours": 24
+  },
+  "sources": {
+    "github": [
+      {
+        "type": "repo_releases",
+        "enabled": true,
+        "owner": "geopandas",
+        "repo": "geopandas",
+        "profile": "tech-blog"
+      },
+      {
+        "type": "repo_releases",
+        "enabled": true,
+        "owner": "pydata",
+        "repo": "xarray",
+        "profile": "tech-blog"
+      },
+      {
+        "type": "repo_releases",
+        "enabled": true,
+        "owner": "rasterio",
+        "repo": "rasterio",
+        "profile": "tech-blog"
+      },
+      {
+        "type": "repo_releases",
+        "enabled": true,
+        "owner": "opengeos",
+        "repo": "leafmap",
+        "profile": "tech-blog"
+      },
+      {
+        "type": "repo_releases",
+        "enabled": true,
+        "owner": "gee-community",
+        "repo": "geemap",
+        "profile": "tech-blog"
+      },
+      {
+        "type": "repo_releases",
+        "enabled": true,
+        "owner": "CesiumGS",
+        "repo": "cesium",
+        "profile": "tech-blog"
+      },
+      {
+        "type": "repo_releases",
+        "enabled": true,
+        "owner": "duckdb",
+        "repo": "duckdb",
+        "profile": "tech-blog"
+      }
+    ],
+    "reddit": {
+      "enabled": true,
+      "subreddits": [
+        {
+          "subreddit": "gis",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 15,
+          "min_score": 20,
+          "profile": "tech-blog"
+        },
+        {
+          "subreddit": "remotesensing",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 15,
+          "min_score": 10,
+          "profile": "tech-blog"
+        }
+      ],
+      "users": [],
+      "fetch_comments": 3
+    },
+    "rss": [
+      {
+        "name": "arXiv cs.CV",
+        "url": "https://rss.arxiv.org/rss/cs.CV",
+        "enabled": true,
+        "category": "geoai-research",
+        "profile": "tech-news"
+      },
+      {
+        "name": "arXiv physics.geo-ph",
+        "url": "https://rss.arxiv.org/rss/physics.geo-ph",
+        "enabled": true,
+        "category": "geoai-research",
+        "profile": "tech-news"
+      }
+    ],
+    "google_news": {
+      "enabled": true,
+      "query": "GeoAI OR \"geospatial AI\" OR \"foundation model\" remote sensing",
+      "language": "en",
+      "country": "US",
+      "max_results": 30,
+      "category": "geoai-news",
+      "profile": "tech-news"
+    },
+    "hackernews": {
+      "enabled": false,
+      "fetch_top_stories": 20,
+      "min_score": 150,
+      "profile": "tech-news"
+    }
+  },
+  "processing": {
+    "profiles_dir": "profiles",
+    "default_profile": "tech-blog",
+    "profile_settings": {
+      "tech-news": {
+        "threshold": 7.5,
+        "topic_dedup": true
+      },
+      "tech-blog": {
+        "threshold": 5,
+        "topic_dedup": false
+      }
+    }
+  },
+  "digest": {
+    "max_items": 15,
+    "profile_order": [
+      "tech-blog",
+      "tech-news"
+    ],
+    "category_groups": {
+      "research": {
+        "limit": 5,
+        "categories": [
+          "geoai-research"
+        ]
+      },
+      "news": {
+        "limit": 4,
+        "categories": [
+          "geoai-news"
+        ]
+      }
+    },
+    "default_group": "other",
+    "default_group_limit": 6
+  },
+  "webhook": {
+    "enabled": false
+  }
+}
