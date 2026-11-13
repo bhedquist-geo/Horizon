@@ -75,7 +75,7 @@
       }
     ],
     "reddit": {
-      "enabled": true,
+      "enabled": false,
       "subreddits": [
         {
           "subreddit": "gis",
@@ -155,14 +155,14 @@
       },
       {
         "name": "Google News: GIS and geoscience education",
-        "url": "https://news.google.com/rss/search?q=%22GIS+education%22+OR+%22geoscience+education%22+OR+%22geography+education%22+OR+%22AI+in+higher+education%22&hl=en-US&gl=US&ceid=US:en",
+        "url": "https://news.google.com/rss/search?q=%28%22GIS+education%22+OR+%22geoscience+education%22+OR+%22geography+education%22+OR+%28%22higher+education%22+%22artificial+intelligence%22+%28teaching+OR+curriculum+OR+faculty%29%29%29+when:2d&hl=en-US&gl=US&ceid=US:en",
         "enabled": true,
         "category": "education",
         "profile": "geo-science-edu"
       },
       {
         "name": "Google News: research funding",
-        "url": "https://news.google.com/rss/search?q=NSF+OR+NASA+OR+NOAA+OR+USDA+grant+geoscience+OR+geospatial+OR+%22remote+sensing%22+OR+%22climate+research%22&hl=en-US&gl=US&ceid=US:en",
+        "url": "https://news.google.com/rss/search?q=%28NSF+OR+NASA+OR+NOAA+OR+USDA%29+%28grant+OR+funding+OR+%22funding+opportunity%22%29+%28geoscience+OR+geospatial+OR+%22remote+sensing%22+OR+climate+OR+%22Earth+science%22%29+when:2d&hl=en-US&gl=US&ceid=US:en",
         "enabled": true,
         "category": "funding",
         "profile": "geo-science-edu"
@@ -206,14 +206,14 @@
     ],
     "category_groups": {
       "geoai": {
-        "limit": 7,
+        "limit": 9,
         "categories": [
           "geoai-research",
           "geoai-news"
         ]
       },
       "climate_geoscience": {
-        "limit": 6,
+        "limit": 7,
         "categories": [
           "climate-research",
           "climate-news",
