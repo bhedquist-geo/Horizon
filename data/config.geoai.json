@@ -22,49 +22,56 @@
         "enabled": true,
         "owner": "geopandas",
         "repo": "geopandas",
-        "profile": "tech-blog"
+        "profile": "geoai"
       },
       {
         "type": "repo_releases",
         "enabled": true,
         "owner": "pydata",
         "repo": "xarray",
-        "profile": "tech-blog"
+        "profile": "geoai"
       },
       {
         "type": "repo_releases",
         "enabled": true,
         "owner": "rasterio",
         "repo": "rasterio",
-        "profile": "tech-blog"
+        "profile": "geoai"
       },
       {
         "type": "repo_releases",
         "enabled": true,
         "owner": "opengeos",
         "repo": "leafmap",
-        "profile": "tech-blog"
+        "profile": "geoai"
       },
       {
         "type": "repo_releases",
         "enabled": true,
         "owner": "gee-community",
         "repo": "geemap",
-        "profile": "tech-blog"
+        "profile": "geoai"
       },
       {
         "type": "repo_releases",
         "enabled": true,
         "owner": "CesiumGS",
         "repo": "cesium",
-        "profile": "tech-blog"
+        "profile": "geoai"
       },
       {
         "type": "repo_releases",
         "enabled": true,
         "owner": "duckdb",
         "repo": "duckdb",
-        "profile": "tech-blog"
+        "profile": "geoai"
+      },
+      {
+        "type": "repo_releases",
+        "enabled": true,
+        "owner": "qgis",
+        "repo": "QGIS",
+        "profile": "geoai"
       }
     ],
     "reddit": {
@@ -77,7 +84,7 @@
           "time_filter": "day",
           "fetch_limit": 15,
           "min_score": 20,
-          "profile": "tech-blog"
+          "profile": "geoai"
         },
         {
           "subreddit": "remotesensing",
@@ -86,7 +93,25 @@
           "time_filter": "day",
           "fetch_limit": 15,
           "min_score": 10,
-          "profile": "tech-blog"
+          "profile": "geoai"
+        },
+        {
+          "subreddit": "geospatial",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 15,
+          "min_score": 10,
+          "profile": "geoai"
+        },
+        {
+          "subreddit": "climatescience",
+          "enabled": true,
+          "sort": "hot",
+          "time_filter": "day",
+          "fetch_limit": 15,
+          "min_score": 20,
+          "profile": "geo-science-edu"
         }
       ],
       "users": [],
@@ -98,14 +123,49 @@
         "url": "https://rss.arxiv.org/rss/cs.CV",
         "enabled": true,
         "category": "geoai-research",
-        "profile": "tech-news"
+        "profile": "geoai"
+      },
+      {
+        "name": "arXiv physics.ao-ph",
+        "url": "https://rss.arxiv.org/rss/physics.ao-ph",
+        "enabled": true,
+        "category": "climate-research",
+        "profile": "geo-science-edu"
       },
       {
         "name": "arXiv physics.geo-ph",
         "url": "https://rss.arxiv.org/rss/physics.geo-ph",
         "enabled": true,
-        "category": "geoai-research",
-        "profile": "tech-news"
+        "category": "climate-research",
+        "profile": "geo-science-edu"
+      },
+      {
+        "name": "Eos (AGU)",
+        "url": "https://eos.org/feed",
+        "enabled": true,
+        "category": "geoscience-news",
+        "profile": "geo-science-edu"
+      },
+      {
+        "name": "Google News: climate and water",
+        "url": "https://news.google.com/rss/search?q=%22climate+science%22+OR+drought+OR+%22Ogallala+Aquifer%22+OR+InSAR&hl=en-US&gl=US&ceid=US:en",
+        "enabled": true,
+        "category": "climate-news",
+        "profile": "geo-science-edu"
+      },
+      {
+        "name": "Google News: GIS and geoscience education",
+        "url": "https://news.google.com/rss/search?q=%22GIS+education%22+OR+%22geoscience+education%22+OR+%22geography+education%22+OR+%22AI+in+higher+education%22&hl=en-US&gl=US&ceid=US:en",
+        "enabled": true,
+        "category": "education",
+        "profile": "geo-science-edu"
+      },
+      {
+        "name": "Google News: research funding",
+        "url": "https://news.google.com/rss/search?q=NSF+OR+NASA+OR+NOAA+OR+USDA+grant+geoscience+OR+geospatial+OR+%22remote+sensing%22+OR+%22climate+research%22&hl=en-US&gl=US&ceid=US:en",
+        "enabled": true,
+        "category": "funding",
+        "profile": "geo-science-edu"
       }
     ],
     "google_news": {
@@ -115,51 +175,66 @@
       "country": "US",
       "max_results": 30,
       "category": "geoai-news",
-      "profile": "tech-news"
+      "profile": "geoai"
     },
     "hackernews": {
       "enabled": false,
       "fetch_top_stories": 20,
       "min_score": 150,
-      "profile": "tech-news"
+      "profile": "geoai"
     }
   },
   "processing": {
     "profiles_dir": "profiles",
-    "default_profile": "tech-blog",
+    "default_profile": "geoai",
     "profile_settings": {
-      "tech-news": {
+      "geoai": {
         "threshold": 7.5,
         "topic_dedup": true
       },
-      "tech-blog": {
-        "threshold": 5,
-        "topic_dedup": false
+      "geo-science-edu": {
+        "threshold": 6,
+        "topic_dedup": true
       }
     }
   },
   "digest": {
-    "max_items": 15,
+    "max_items": 20,
     "profile_order": [
-      "tech-blog",
-      "tech-news"
+      "geoai",
+      "geo-science-edu"
     ],
     "category_groups": {
-      "research": {
-        "limit": 5,
+      "geoai": {
+        "limit": 7,
         "categories": [
-          "geoai-research"
+          "geoai-research",
+          "geoai-news"
         ]
       },
-      "news": {
-        "limit": 4,
+      "climate_geoscience": {
+        "limit": 6,
         "categories": [
-          "geoai-news"
+          "climate-research",
+          "climate-news",
+          "geoscience-news"
+        ]
+      },
+      "teaching": {
+        "limit": 3,
+        "categories": [
+          "education"
+        ]
+      },
+      "funding": {
+        "limit": 3,
+        "categories": [
+          "funding"
         ]
       }
     },
     "default_group": "other",
-    "default_group_limit": 6
+    "default_group_limit": 4
   },
   "webhook": {
     "enabled": false
