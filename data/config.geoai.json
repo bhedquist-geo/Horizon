@@ -155,7 +155,7 @@
       },
       {
         "name": "Google News: GIS and geoscience education",
-        "url": "https://news.google.com/rss/search?q=%28%22GIS+education%22+OR+%22geoscience+education%22+OR+%22geography+education%22+OR+%28%22higher+education%22+%22artificial+intelligence%22+%28teaching+OR+curriculum+OR+faculty%29%29%29+when:2d&hl=en-US&gl=US&ceid=US:en",
+        "url": "https://news.google.com/rss/search?q=%22GIS+education%22+OR+%22geoscience+education%22+OR+%22geography+education%22+OR+%22AI+in+higher+education%22+OR+%22teaching+with+AI%22&hl=en-US&gl=US&ceid=US:en",
         "enabled": true,
         "category": "education",
         "profile": "geo-science-edu"
@@ -165,6 +165,20 @@
         "url": "https://news.google.com/rss/search?q=%28NSF+OR+NASA+OR+NOAA+OR+USDA%29+%28grant+OR+funding+OR+%22funding+opportunity%22%29+%28geoscience+OR+geospatial+OR+%22remote+sensing%22+OR+climate+OR+%22Earth+science%22%29+when:2d&hl=en-US&gl=US&ceid=US:en",
         "enabled": true,
         "category": "funding",
+        "profile": "geo-science-edu"
+      },
+      {
+        "name": "Carbon Brief",
+        "url": "https://www.carbonbrief.org/feed/",
+        "enabled": true,
+        "category": "climate-news",
+        "profile": "geo-science-edu"
+      },
+      {
+        "name": "Inside Higher Ed",
+        "url": "https://www.insidehighered.com/rss.xml",
+        "enabled": true,
+        "category": "education",
         "profile": "geo-science-edu"
       }
     ],
@@ -193,7 +207,7 @@
         "topic_dedup": true
       },
       "geo-science-edu": {
-        "threshold": 5.5,
+        "threshold": 5,
         "topic_dedup": true
       }
     }
@@ -205,17 +219,27 @@
       "geo-science-edu"
     ],
     "category_groups": {
-      "geoai": {
-        "limit": 9,
+      "geoai_research": {
+        "limit": 5,
         "categories": [
-          "geoai-research",
+          "geoai-research"
+        ]
+      },
+      "geoai_news": {
+        "limit": 3,
+        "categories": [
           "geoai-news"
         ]
       },
-      "climate_geoscience": {
-        "limit": 7,
+      "climate_research": {
+        "limit": 3,
         "categories": [
-          "climate-research",
+          "climate-research"
+        ]
+      },
+      "climate_news": {
+        "limit": 4,
+        "categories": [
           "climate-news",
           "geoscience-news"
         ]
