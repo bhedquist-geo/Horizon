@@ -155,7 +155,7 @@
       },
       {
         "name": "Google News: GIS and geoscience education",
-        "url": "https://news.google.com/rss/search?q=%22GIS+education%22+OR+%22geoscience+education%22+OR+%22geography+education%22+OR+%22AI+in+higher+education%22+OR+%22teaching+with+AI%22&hl=en-US&gl=US&ceid=US:en",
+        "url": "https://news.google.com/rss/search?q=%22GIS+education%22+OR+%22geoscience+education%22+OR+%22geography+education%22+OR+%22AI+in+higher+education%22+OR+%22teaching+with+AI%22+when:2d&hl=en-US&gl=US&ceid=US:en",
         "enabled": true,
         "category": "education",
         "profile": "geo-science-edu"
@@ -220,7 +220,7 @@
     ],
     "category_groups": {
       "geoai_research": {
-        "limit": 5,
+        "limit": 8,
         "categories": [
           "geoai-research"
         ]
@@ -232,13 +232,13 @@
         ]
       },
       "climate_research": {
-        "limit": 3,
+        "limit": 4,
         "categories": [
           "climate-research"
         ]
       },
       "climate_news": {
-        "limit": 4,
+        "limit": 7,
         "categories": [
           "climate-news",
           "geoscience-news"
